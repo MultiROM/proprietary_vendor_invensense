@@ -47,3 +47,37 @@ LOCAL_MODULE_OWNER := invensense
 include $(BUILD_PREBUILT)
 
 endif
+
+ifeq ($(TARGET_DEVICE),tilapia)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libinvensense_hal
+LOCAL_SRC_FILES := libinvensense_hal.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := $(TARGET_OUT)/lib
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := invensense
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libmllite
+LOCAL_SRC_FILES := libmllite.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := $(TARGET_OUT)/lib
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := invensense
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libmplmpu
+LOCAL_SRC_FILES := libmplmpu.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := $(TARGET_OUT)/lib
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := invensense
+include $(BUILD_PREBUILT)
+
+endif
